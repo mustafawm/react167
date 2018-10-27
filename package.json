@@ -9,7 +9,8 @@
     "lint": "cross-env eslint src",
     "prettier": "cross-env prettier \"**/*.+(js|jsx|json|yml|yaml|css|ts|tsx|md)\"",
     "format": "cross-env npm run prettier  -- --write",
-    "validate": "cross-env npm run lint && npm run prettier -- --list-different"
+    "validate": "cross-env npm run lint && npm run prettier -- --list-different",
+    "precommit": "cross-env npm run validate"
   },
   "dependencies": {
     "@babel/core": "^7.1.2",
