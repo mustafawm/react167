@@ -4,7 +4,7 @@ function reducer(currentState, newState) {
   return {...currentState, ...newState};
 }
 
-const StopWatch = () => {
+const StopWatchReducer2 = () => {
   const [state, setState] = useReducer(reducer, {isRunning: false, lapse: 0});
   const intervalRef = useRef(null);
 
@@ -47,4 +47,4 @@ const StopWatch = () => {
   );
 };
 
-export default StopWatch;
+export default StopWatchReducer2;

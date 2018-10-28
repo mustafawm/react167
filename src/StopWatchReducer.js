@@ -23,7 +23,7 @@ function reducer(state, action) {
   }
 }
 
-const StopWatch = () => {
+const StopWatchReducer = () => {
   const [state, dispatch] = useReducer(reducer, {isRunning: false, lapse: 0});
   const intervalRef = useRef(null);
   const dispatcher = (type, payload) => dispatch({type, payload});
@@ -67,4 +67,4 @@ const StopWatch = () => {
   );
 };
 
-export default StopWatch;
+export default StopWatchReducer;

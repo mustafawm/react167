@@ -5,6 +5,7 @@ import CounterButton from './CounterButton';
 import Tilt from './VnillaTilt';
 import StopWatchReducer from './StopWatchReducer';
 import StopWatchReducer2 from './StopWatchReducer2';
+import StopWatchReducerHook from './StopWatchReducerHook';
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
       <StopWatchReducer />
       <hr />
       <StopWatchReducer2 />
+      <hr />
+      <StopWatchReducerHook />
     </React.Fragment>
   );
 }
