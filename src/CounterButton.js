@@ -12,5 +12,9 @@ export default function CounterButton() {
     [count],
   );
 
-  return <button onClick={() => setCount(count + 1)}>{count} clicks</button>;
+  return (
+    <button data-testid="counter-btn" onClick={() => setCount(count + 1)}>
+      {count} clicks
+    </button>
+  );
 }
