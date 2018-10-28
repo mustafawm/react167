@@ -4,15 +4,15 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = () => ({
   mode: 'production',
-  devtool: 'cheap-source-map',
 
   entry: {
-    app: ['./src/main.js'],
+    app: './src/main.js',
   },
 
   output: {
     path: resolve(__dirname, 'dist'),
     filename: '[name].js',
+    publicPath: '/',
   },
 
   resolve: {
@@ -24,6 +24,12 @@ module.exports = () => ({
 
   module: {
     rules: [
+      {
+        enforce: 'pre',
+        test: /\.(js|jsx)$/,
+        use: ['eslint-loader'],
+        exclude: /node_modules/,
+      },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
@@ -37,7 +43,6 @@ module.exports = () => ({
   },
 
   plugins: [
-    new UglifyJSPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
