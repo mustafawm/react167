@@ -2,32 +2,14 @@ const {resolve} = require('path');
 const webpack = require('webpack');
 
 const portNo = process.env.PORT || 5050;
-const watchPoll = process.env.WATCH_POLL || 2500;
-const isDocker = Boolean(process.env.DOCKER_COMPOSE);
-
-const devServerOpts = isDocker
-  ? {
-      watchOptions: {
-        aggregateTimeout: 500,
-        poll: watchPoll,
-        ignored: /node_modules/,
-      },
-      index: '', // specify to enable root proxying
-      proxy: {
-        context: () => true,
-        target: process.env.END_POINT,
-        secure: false,
-      },
-    }
-  : {watchOptions: {poll: watchPoll}};
 
 module.exports = () => ({
   mode: 'development',
   devtool: 'cheap-module-eval-source-map',
 
   entry: {
-    vendor: ['react', 'react-dom', 'moment'],
-    app: ['./src/main.js'],
+    vendor: ['react', 'react-dom'],
+    app: './src/main.js',
   },
 
   output: {
@@ -70,12 +52,12 @@ module.exports = () => ({
 
   devServer: {
     hot: true,
+    stats: 'minimal',
     host: '0.0.0.0',
     port: portNo,
-    inline: true,
     public: `localhost:${portNo}`,
     contentBase: resolve(__dirname, 'dist'),
+    publicPath: '/',
     headers: {'Access-Control-Allow-Origin': '*'},
-    ...devServerOpts,
   },
 });
