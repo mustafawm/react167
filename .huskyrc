@@ -1,5 +1,5 @@
 {
   "hooks": {
-    "pre-commit": "cross-env lint-staged"
+    "pre-commit": "cross-env lint-staged && npm run test"
   }
 }
