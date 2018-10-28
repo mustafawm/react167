@@ -28,6 +28,7 @@ export default () => {
 
   return (
     <div style={{textAlign: 'center'}}>
+      <p>No reducer</p>
       <span
         style={{
           fontSize: '3em',

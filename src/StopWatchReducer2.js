@@ -1,32 +1,12 @@
 import React, {useReducer, useRef, useEffect} from 'react';
 
-function reducer(state, action) {
-  switch (action.type) {
-    case 'LAPSE':
-      return {
-        ...state,
-        lapse: action.payload,
-      };
-    case 'TOGGLE_RUNNING':
-      return {
-        ...state,
-        isRunning: !state.isRunning,
-      };
-    case 'CLEAR':
-      return {
-        ...state,
-        lapse: 0,
-        isRunning: 0,
-      };
-    default:
-      return state;
-  }
+function reducer(currentState, newState) {
+  return {...currentState, ...newState};
 }
 
 const StopWatch = () => {
-  const [state, dispatch] = useReducer(reducer, {isRunning: false, lapse: 0});
+  const [state, setState] = useReducer(reducer, {isRunning: false, lapse: 0});
   const intervalRef = useRef(null);
-  const dispatcher = (type, payload) => dispatch({type, payload});
 
   useEffect(() => clearInterval(intervalRef.current), []);
 
@@ -36,21 +16,21 @@ const StopWatch = () => {
     } else {
       const startTime = Date.now() - state.lapse;
       intervalRef.current = setInterval(() => {
-        dispatcher('LAPSE', Date.now() - startTime);
+        setState({lapse: Date.now() - startTime});
       }, 0);
     }
 
-    dispatcher('TOGGLE_RUNNING');
+    setState({isRunning: !state.isRunning});
   }
 
   function handleClearClick() {
     clearInterval(intervalRef.current);
-    dispatcher('CLEAR');
+    setState({lapse: 0, isRunning: false});
   }
 
   return (
     <div style={{textAlign: 'center'}}>
-      <p>Regular reducer</p>
+      <p>Simple reducer</p>
       <span
         style={{
           fontSize: '3em',
