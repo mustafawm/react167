@@ -30,7 +30,7 @@ export default () => {
     <div style={{textAlign: 'center'}}>
       <span
         style={{
-          fontSize: '5em',
+          fontSize: '3em',
           display: 'block',
         }}
       >
