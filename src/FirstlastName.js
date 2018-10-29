@@ -11,8 +11,7 @@ const Upper = React.memo(props => {
 
   return (
     <div>
-      Uppercase version: `$
-      {props.children.toUpperCase()} `
+      Uppercase version: {`${(props.children || '').toUpperCase()} `}
       <button onClick={() => setCount(count + 1)}>{count}</button>
     </div>
   );
