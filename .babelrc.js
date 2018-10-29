@@ -18,5 +18,6 @@ module.exports = {
     '@babel/plugin-proposal-export-namespace-from',
     '@babel/plugin-transform-async-to-generator',
     '@babel/plugin-transform-modules-commonjs',
+    isTest ? 'babel-plugin-dynamic-import-node' : null,
   ].filter(Boolean),
 };
