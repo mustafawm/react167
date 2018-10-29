@@ -1,6 +1,6 @@
 import React from 'react';
 import {render, fireEvent} from 'react-testing-library';
-import Counter from '../CounterButton';
+import Counter from '../components/CountBtn';
 
 afterEach(() => {
   window.localStorage.removeItem('count');

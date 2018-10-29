@@ -1,32 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import StopWatch from './StopWatch';
-import CounterButton from './CounterButton';
-import Tilt from './VnillaTilt';
-import StopWatchReducer from './StopWatchReducer';
-import StopWatchReducer2 from './StopWatchReducer2';
-import StopWatchReducerHook from './StopWatchReducerHook';
-import FirstlastName from './FirstlastName';
-import LazyTilt from './LazyTilt';
+import Counter from './components/CountBtn';
+import StopWatches from './components/StopWatch';
+import SimpleForm from './components/SimpleForm';
+import Tilt from './components/Tilt';
 
 function App() {
   return (
     <React.Fragment>
-      <CounterButton />
-      <hr />
-      <StopWatch />
-      <hr />
+      <Counter />
+      <StopWatches />
       <Tilt />
-      <hr />
-      <StopWatchReducer />
-      <hr />
-      <StopWatchReducer2 />
-      <hr />
-      <StopWatchReducerHook />
-      <hr />
-      <FirstlastName />
-      <hr />
-      <LazyTilt />
+      <SimpleForm />
     </React.Fragment>
   );
 }

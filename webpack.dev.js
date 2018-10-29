@@ -40,17 +40,26 @@ module.exports = () => ({
       },
       {
         test: /\.css$/,
+        exclude: /\.module\.css$/,
+        use: [{loader: 'style-loader'}, {loader: 'css-loader'}],
+      },
+      {
+        test: /\.module\.css$/,
         use: [
           {loader: 'style-loader'},
           {
             loader: 'css-loader',
             options: {
-              sourceMap: true,
+              camelCase: true,
               modules: true,
-              localIdentName: '[local]___[hash:base64:5]',
+              localIdentName: '[local]_[hash:base64:5]',
             },
           },
         ],
+      },
+      {
+        test: /\.(png|jpg|gif|eot|svg|ttf|woff|woff2)$/,
+        use: 'file-loader',
       },
     ],
   },

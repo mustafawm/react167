@@ -13,8 +13,11 @@ export default function CounterButton() {
   );
 
   return (
-    <button data-testid="counter-btn" onClick={() => setCount(count + 1)}>
-      {count} clicks
-    </button>
+    <React.Fragment>
+      <button data-testid="counter-btn" onClick={() => setCount(count + 1)}>
+        {count} clicks
+      </button>
+      <br />
+    </React.Fragment>
   );
 }
