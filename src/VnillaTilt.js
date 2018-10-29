@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import VanillaTilt from 'vanilla-tilt';
-import './VanillaTilt.css';
+import styles from './VanillaTilt.module.css';
 
 const Tilt = props => {
   const tiltRef = useRef();
@@ -17,16 +17,16 @@ const Tilt = props => {
   }, []);
 
   return (
-    <div ref={tiltRef} className="tilt-root">
-      <div className="tilt-child">{props.children}</div>
+    <div ref={tiltRef} className={styles.tiltRoot}>
+      <div className={styles.tiltChild}>{props.children}</div>
     </div>
   );
 };
 
 const WrappedTilt = () => (
-  <div className="totally-centered">
+  <div className={styles.totallyCentered}>
     <Tilt>
-      <div className="totally-centered">JUST THE TILT</div>
+      <div className={styles.totallyCentered}>JUST THE TILT</div>
     </Tilt>
   </div>
 );
