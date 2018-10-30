@@ -5,8 +5,8 @@
   "main": "index.js",
   "license": "ISC",
   "scripts": {
-    "start": "cross-env webpack-dev-server --config ./webpack.dev.js",
-    "build": "cross-env webpack --config ./webpack.prod.js",
+    "start": "cross-env webpack-dev-server --mode=development",
+    "build": "cross-env webpack --mode=production",
     "test": "jest",
     "lint": "cross-env eslint src",
     "prettier": "cross-env prettier \"**/*.+(js|jsx|json|yml|yaml|css|ts|tsx|md)\"",

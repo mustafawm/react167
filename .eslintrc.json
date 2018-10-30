@@ -16,11 +16,7 @@
     "jest/globals": true
   },
   "settings": {
-    "import/resolver": {
-      "webpack": {
-        "config": "webpack.dev.js"
-      }
-    }
+    "import/resolver": "webpack"
   },
   "rules": {
     "semi": "warn",
