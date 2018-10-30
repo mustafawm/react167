@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
   testEnvironment: 'jsdom',
+  testMatch: ['**/src/__tests__/**/*.js?(x)'],
   moduleDirectories: ['node_modules', path.join(__dirname, 'src')],
   moduleNameMapper: {
     // module must come first
