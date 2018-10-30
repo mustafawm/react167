@@ -7,7 +7,8 @@
   "scripts": {
     "start": "cross-env webpack-dev-server --mode=development",
     "build": "cross-env webpack --mode=production",
-    "test": "jest",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
     "lint": "cross-env eslint src",
     "prettier": "cross-env prettier \"**/*.+(js|jsx|json|yml|yaml|css|ts|tsx|md)\"",
     "format": "cross-env npm run prettier  -- --write",

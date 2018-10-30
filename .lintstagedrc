@@ -1,7 +1,8 @@
 {
   "linters": {
     "*.js": [
-      "eslint"
+      "eslint",
+      "jest --findRelatedTests",
     ],
     "**/*.+(js|jsx|json|yml|yaml|css|ts|tsx|md)": [
       "prettier --write",
