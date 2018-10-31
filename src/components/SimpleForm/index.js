@@ -1,3 +1,4 @@
+/* eslint no-console:0 */
 import React, {useState} from 'react';
 /**
  * calling setFirstname or setLastname will re-render <Form />

@@ -4,7 +4,6 @@ import Counter from './components/CountBtn';
 import StopWatches from './components/StopWatch';
 import SimpleForm from './components/SimpleForm';
 import Tilt from './components/Tilt';
-import Calculator from './components/Calculator';
 
 function App() {
   return (

@@ -14,7 +14,15 @@ let commonOpts = {
   ],
   devServer: {
     hot: true,
-    stats: 'minimal',
+    stats: {
+      all: false,
+      assets: true,
+      builtAt: true,
+      chunks: true,
+      colors: true,
+      errors: true,
+      chunkOrigins: false,
+    },
     host: '0.0.0.0',
     port: portNo,
     public: `localhost:${portNo}`,
@@ -45,6 +53,7 @@ module.exports = (env, argv = {}) => {
     output: {
       path: resolve(__dirname, 'dist'),
       filename: '[name].js',
+      chunkFilename: '[name].chunk.js',
     },
 
     resolve: {

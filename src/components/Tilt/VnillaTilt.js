@@ -1,3 +1,4 @@
+/* eslint react/prop-types:0 */
 import React, {useEffect, useRef} from 'react';
 import VanillaTilt from 'vanilla-tilt';
 import styles from './VanillaTilt.module.css';

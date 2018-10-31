@@ -1,13 +1,12 @@
 import React from 'react';
-import {callme} from 'shared/helpers';
+// import {callme} from 'shared/helpers';
 import LazyTilt from './LazyTilt';
-import VnillaTilt from './VnillaTilt';
+// import VnillaTilt from './VnillaTilt';
 
 function Tilts() {
-  callme();
   return (
     <React.Fragment>
-      <VnillaTilt />
+      {/* <VnillaTilt /> */}
       <hr />
       <LazyTilt />
       <hr />
